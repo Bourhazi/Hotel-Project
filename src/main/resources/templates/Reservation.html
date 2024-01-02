@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Users</title>
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#" th:href="@{/}">Registration and Login Module</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav ml-auto">
+                <!-- Add your navigation links here -->
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<br>
+<div class="container-fluid text-center">
+    <div><h2>Listes des Reservations</h2></div>
+    <div class="m-2">
+    </div>
+    <div th:if="${message}" class="alert alert-success text-center">
+        [[${message}]]
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+            <tr>
+                <th>Code Chambre</th>
+                <th>Date d'arrivée</th>
+                <th>Date de Départ</th>
+                <th>Etat</th>
+                <th>Code Réservation</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <!--<th:block th:each="user : ${listUsers}">-->
+            <tr>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>test</td>
+                <td>
+                    <a class="h4 mr-3" href="AjouterReservation">changer</a>
+                    <a class="h4 mr-3" href="AjouterReservation">Supprimer</a>
+                </td>
+            </tr>
+            <!--</th:block>-->
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" >Registration and
+                Login Module</a>
+        </div>
+    </div>
+</nav>
+</body>
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Reservation</h1>
+            <form th:action="@{/reservation/submitReservation}" method="post" >
+                <div class="form-group">
+                    <label class="control-label" for="dateDepart">Date de Depart</label>
+                    <input id="dateDepart" name="dateDepart" type="date" class="form-control"
+                           required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="dateArrive">Date d'arrivée</label>
+                    <input id="dateArrive" type="date" name="dateArrive" class="form-control"
+                           required autofocus="autofocus" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="Categorie">Catégorie</label>
+                    <div class="input-group">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                        <select class="form-control" id="Categorie" name="categorieId" >
+                            <option selected>Choose...</option>
+                            <option th:each="category : ${listeCategories}" th:value="${category.id}" th:text="${category.name}"></option>
+                        </select>
+                    </div>
+                </div>
+                <!--<input type="hidden"  name="categorieId" th:value="${listeCategories[0].id}" />-->
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Reserver</button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</html>
